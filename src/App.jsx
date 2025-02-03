@@ -1,17 +1,20 @@
-import React from "react";
-import Header from "./components/Header.jsx";
-import Navbar from './components/Navbar.jsx';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './components/Navbar.css';
 import './App.css';
-import Footer from "./components/Footer.jsx";
+import HomePage from "./pages/HomePage.jsx";
+import Beauty from "./pages/BeautyPage.jsx";
+
 
 function App() {
   return (
-    <div>
-      <Header />
-      <Navbar />
-      <Footer/>
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/beauty" element={<Beauty />} />
+        </Routes>
+      </div>
+      </Router>
   );
 }
 
